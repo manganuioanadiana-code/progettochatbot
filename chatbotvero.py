@@ -33,9 +33,9 @@ st.markdown(
 
 st.header("Assistenza online")
 
-st.image("RAG classe/Chatbot.webp", width=500)
+st.image("Chatbot.webp", width=500)
 
-documento ="RAG classe/CATALOGO_ELETTRODOMESTICI_CHATBOT.pdf"
+documento ="CATALOGO_ELETTRODOMESTICI_CHATBOT.pdf"
 
 openai_api_key=st.secrets["OPENAI_API_KEY"]
 
