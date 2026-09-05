@@ -44,7 +44,7 @@ st.markdown("""
 
 st.header("Assistenza online")
 
-st.image("Chatbot.webp", width=700)
+st.image("Chatbot.webp", width=500)
 
 documento = "CATALOGO_ELETTRODOMESTICI_CHATBOT.pdf"
 
