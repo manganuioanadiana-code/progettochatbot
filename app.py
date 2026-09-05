@@ -23,37 +23,21 @@ st.set_page_config(page_title= "RagChatbot",
 st.markdown("""
     <style>
     .stApp {
-        background: #FF7F27;
+        background: linear-gradient(135deg, #FF9A42 0%, #FF7F27 100%);
     }
-    /* Questo è il velo che crea lo sfocato */
-    [data-testid="stAppViewContainer"] {
-        background: radial-gradient(circle at 20% 30%, #FFB26B 0%, transparent 50%),
-                    radial-gradient(circle at 80% 80%, #FF9A42 0%, transparent 50%),
-                    #FF7F27;
-        filter: blur(0px);
-    }
-    [data-testid="stAppViewContainer"]::before {
+    .stApp::before {
         content: "";
         position: fixed;
-        inset: 0;
-        background: rgba(255,255,255,0.18);
-        backdrop-filter: blur(30px);
-        -webkit-backdrop-filter: blur(30px);
+        top: 0; left: 0;
+        width: 100%; height: 100%;
+        background: rgba(255,255,255,0.12);
+        backdrop-filter: blur(45px);
+        pointer-events: none;
+        z-index: -1;
     }
-    /* La chat deve stare sopra e deve essere bianca con effetto vetro */
     .stChatMessage {
-        background: rgba(255,255,255,0.90) !important;
-        backdrop-filter: blur(15px) !important;
+        background: rgba(255,255,255,0.88) !important;
         border-radius: 18px !important;
-        border: 1px solid rgba(255,255,255,0.7) !important;
-    }
-    /* Contenitore principale sopra il blur */
-    .main .block-container {
-        background: rgba(255,255,255,0.15);
-        backdrop-filter: blur(25px);
-        -webkit-backdrop-filter: blur(25px);
-        border-radius: 25px;
-        padding-top: 2rem;
     }
     </style>
 """, unsafe_allow_html=True)
