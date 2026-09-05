@@ -20,16 +20,33 @@ st.set_page_config(page_title= "RagChatbot",
 
 # Personalizzazione colori:
 # Colori esadecimali: https://divmagic.com/it/tools/color-converter
-st.markdown(
-    """
+st.markdown("""
     <style>
     .stApp {
-        background-color: #B84B4B;
-        color: #B1D4D8;
+        background: linear-gradient(135deg, #FF9A42 0%, #FF7F27 100%);
+    }
+    .stApp::before {
+        content: "";
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: rgba(255,255,255,0.15);
+        backdrop-filter: blur(40px);
+        -webkit-backdrop-filter: blur(40px);
+        pointer-events: none;
+        z-index: -1;
+    }
+    /* Chat con effetto vetro bianco */
+    .stChatMessage {
+        background: rgba(255,255,255,0.85) !important;
+        backdrop-filter: blur(10px);
+        border-radius: 15px !important;
+        border: 1px solid rgba(255,255,255,0.5) !important;
     }
     </style>
-    """,
-    unsafe_allow_html=True)
+""", unsafe_allow_html=True)
 
 st.header("Assistenza online")
 
