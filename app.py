@@ -23,7 +23,7 @@ st.set_page_config(page_title= "RagChatbot",
 st.markdown("""
     <style>
     .stApp {
-        background: linear-gradient(135deg, #FF9A42 0%, #FF7F27 100%);
+        background: #F99E1C;
     }
     .stApp::before {
         content: "";
