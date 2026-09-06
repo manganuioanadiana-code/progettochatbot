@@ -92,7 +92,16 @@ st.markdown("""
 @keyframes sali { 0% {transform: translateY(20px); opacity:0;} 50% {opacity:1;} 100% {transform: translateY(-20px); opacity:0;} }
 </style>
 """, unsafe_allow_html=True)
-documento = "CATALOGO_ELETTRODOMESTICI_CHATBOT.pdf"
+col_sx, col_centro, col_dx = st.columns([1, 2.2, 1])
+
+with col_sx:
+    st.markdown('<div style="background-color:#FFECCF; padding:20px; border-radius:15px;">', unsafe_allow_html=True)
+    st.markdown("### Marchi trattati")
+    st.write("• Candy\n\n• Indesit\n\n• LG\n\n• Smeg\n\n• Whirlpool\n\n• Beko")
+    st.markdown('</div>', unsafe_allow_html=True)
+
+with col_centro:
+     documento = "CATALOGO_ELETTRODOMESTICI_CHATBOT.pdf"
 
 # Estrazione del contenuto e spezzettamento
 if documento is not None:
@@ -254,6 +263,12 @@ if domanda_utente:
             for i, f in enumerate(trovati[:3]):
                 with cols[i]:
                     st.image(f"immagini/{f}", caption=f.split(".")[0].upper(), width=250)   
+
+with col_dx:
+    st.markdown('<div style="background-color:#FFECCF; padding:20px; border-radius:15px;">', unsafe_allow_html=True)
+    st.markdown("### 📍 Dove siamo")
+    st.write("Piazza Umberto I\n93010 Montedoro (CL)\n\n📞 0934 934219\n\n💬 WhatsApp: 327 784 1721\n\n🕒 Lun-Sab 9-13 / 16-20:30\n\n🚚 Consegna a domicilio")
+    st.markdown('</div>', unsafe_allow_html=True)
 
       
                
