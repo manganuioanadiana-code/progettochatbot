@@ -5,5 +5,3 @@ langchain-openai
 langchain-community
 faiss-cpu
 langchain-core
-streamlit-lottie
-requests
