@@ -233,16 +233,25 @@ with col_btn:
     invia = st.button("Invia ➤", use_container_width=True)
 
 # Quando scrive e preme INVIO, o clicca Invia, parte il chatbot
-if domanda_utente:
-    with st.spinner("Sto cercando per te..."):
-        risposta = catena.invoke(domanda_utente)
-        st.write(risposta)
-
         import os
-        risposta_lower = risposta.lower()
+        from PIL import Image
+
+        def togli_sfondo_bianco(percorso):
+            img = Image.open(percorso).convert("RGBA")
+            datas = img.getdata()
+            new_data = []
+            for item in datas:
+                if item[0] > 240 and item[1] > 240 and item[2] > 240:
+                    new_data.append((255, 255, 255, 0))
+                else:
+                    new_data.append(item)
+            img.putdata(new_data)
+            return img
+
         if os.path.exists("immagini"):
+            risposta_clean = risposta.lower().replace(" ", "").replace("-", "")
             for file in os.listdir("immagini"):
-                nome = file.split('.')[0].lower()
-                if nome!= "" and nome in risposta_lower:
-                    st.image(f"immagini/{file}", width=300)
-                    break
+                nome = file.split('.')[0].lower().replace(" ", "").replace("-", "")
+                if len(nome) > 3 and nome in risposta_clean:
+                    img_no_bg = togli_sfondo_bianco(f"immagini/{file}")
+                    st.image(img_no_bg, width=300)
