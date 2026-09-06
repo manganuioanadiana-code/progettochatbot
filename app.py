@@ -19,7 +19,7 @@ from langchain_core.output_parsers import StrOutputParser
 
 # Elenco di tutte le icone Streamlit:
 # https://streamlit-emoji-shortcodes-streamlit-app-gwckff.streamlit.app/
-st.set_page_config(page_title= "RagChatbot",
+st.set_page_config(page_title= "Consulente virtuale",
                    page_icon=":material/local_laundry_service:")
 
 # Personalizzazione colori:
