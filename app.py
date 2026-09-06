@@ -95,9 +95,7 @@ st.markdown("""
 col_sx, col_centro, col_dx = st.columns([1, 2.2, 1])
 
 with col_sx:
-    st.markdown('<div style="background-color:#FFECCF; padding:20px; border-radius:15px;">', unsafe_allow_html=True)
-    st.markdown("### Marchi trattati")
-    st.write("• Candy\n\n• Indesit\n\n• LG\n\n• Smeg\n\n• Whirlpool\n\n• Beko")
+       st.markdown("""<div style="background-color:#FFECCF; padding:20px; border-radius:15px;"><h3>Marchi trattati</h3>• Candy<br><br>• Indesit<br><br>• LG<br><br>• Smeg<br><br>• Whirlpool<br><br>• Beko</div>""", unsafe_allow_html=True)
     st.markdown('</div>', unsafe_allow_html=True)
 
 with col_centro:
@@ -265,9 +263,7 @@ if domanda_utente:
                     st.image(f"immagini/{f}", caption=f.split(".")[0].upper(), width=250)   
 
 with col_dx:
-    st.markdown('<div style="background-color:#FFECCF; padding:20px; border-radius:15px;">', unsafe_allow_html=True)
-    st.markdown("### 📍 Dove siamo")
-    st.write("Piazza Umberto I\n93010 Montedoro (CL)\n\n📞 0934 934219\n\n💬 WhatsApp: 327 784 1721\n\n🕒 Lun-Sab 9-13 / 16-20:30\n\n🚚 Consegna a domicilio")
+    st.markdown("""<div style="background-color:#FFECCF; padding:20px; border-radius:15px;"><h3>📍 Dove siamo</h3>Piazza Umberto I<br>93010 Montedoro (CL)<br><br>📞 0934 934219<br><br>💬 WhatsApp: 327 784 1721<br><br>🕒 Lun-Sab 9-13 / 16-20:30<br><br>🚚 Consegna a domicilio</div>""", unsafe_allow_html=True)
     st.markdown('</div>', unsafe_allow_html=True)
 
       
