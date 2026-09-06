@@ -42,7 +42,7 @@ st.markdown("""
     </style>
 """, unsafe_allow_html=True)
 
-st.header("Assistenza online")
+st.header("Elettrodomestici su misura")
 
 st.image("Chatbot.webp", width=500)
 
