@@ -237,3 +237,12 @@ if domanda_utente:
     with st.spinner("Sto cercando per te..."):
         risposta = catena.invoke(domanda_utente)
         st.write(risposta)
+
+        import os
+        risposta_lower = risposta.lower()
+        if os.path.exists("immagini"):
+            for file in os.listdir("immagini"):
+                nome = file.split('.')[0].lower()
+                if nome!= "" and nome in risposta_lower:
+                    st.image(f"immagini/{file}", width=300)
+                    break
