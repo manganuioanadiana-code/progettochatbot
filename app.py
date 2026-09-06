@@ -240,7 +240,7 @@ if domanda_utente:
         risposta = catena.invoke(domanda_utente)
         st.write(risposta)
 
-      if os.path.exists("immagini"):
+if os.path.exists("immagini"):
         risposta_clean = risposta.lower().replace(" ", "").replace("-", "")
         trovati = []
         for file in os.listdir("immagini"):
@@ -249,7 +249,7 @@ if domanda_utente:
                 if file not in trovati:
                     trovati.append(file)
 
-        if trovati:
+if trovati:
             cols = st.columns(len(trovati[:3]))
             for i, f in enumerate(trovati[:3]):
                 with cols[i]:
