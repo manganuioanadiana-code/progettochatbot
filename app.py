@@ -84,8 +84,9 @@ st.markdown("""
 
 st.header("Elettrodomestici su misura")
 
-st.image("Chatbot.webp", width=500)
-
+st.image("Chatbot.webp", width=250)
+if lottie_robot:
+    st_lottie(lottie_robot, height=180, key="robot_animato")
 documento = "CATALOGO_ELETTRODOMESTICI_CHATBOT.pdf"
 
 # Estrazione del contenuto e spezzettamento
