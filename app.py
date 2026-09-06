@@ -92,12 +92,8 @@ st.markdown("""
 @keyframes sali { 0% {transform: translateY(20px); opacity:0;} 50% {opacity:1;} 100% {transform: translateY(-20px); opacity:0;} }
 </style>
 """, unsafe_allow_html=True)
-col_sx, col_sp1, col_centro, col_sp2, col_dx = st.columns([1.1, 0.2, 2.6, 0.2, 1.1])
+col_centro = st.container()
 
-
-with col_sx:
-    st.markdown("""<div style="background-color:#FFECCF; padding:20px; border-radius:15px;"><h3>Marchi trattati</h3>• Candy<br><br>• Indesit<br><br>• LG<br><br>• Smeg<br><br>• Whirlpool<br><br>• Beko</div>""", unsafe_allow_html=True)
-    st.markdown('</div>', unsafe_allow_html=True)
 
 with col_centro:
      documento = "CATALOGO_ELETTRODOMESTICI_CHATBOT.pdf"
@@ -263,9 +259,7 @@ if domanda_utente:
                 with cols[i]:
                     st.image(f"immagini/{f}", caption=f.split(".")[0].upper(), width=250)   
 
-with col_dx:
-    st.markdown("""<div style="background-color:#FFECCF; padding:20px; border-radius:15px;"><h3>📍 Dove siamo</h3>Piazza Umberto I<br>93010 Montedoro (CL)<br><br>📞 0934 934219<br><br>💬 WhatsApp: 327 784 1721<br><br>🕒 Lun-Sab 9-13 / 16-20:30<br><br>🚚 Consegna a domicilio</div>""", unsafe_allow_html=True)
-    st.markdown('</div>', unsafe_allow_html=True)
+
 
       
                
