@@ -78,20 +78,16 @@ st.markdown("""
 
 st.header("Elettrodomestici su misura")
 
-st.image("Chatbot.webp", width=400)
+st.image("Chatbot.webp", width=500)
 st.markdown("""
-<div style="text-align:center; font-size:90px; animation: float 2s ease-in-out infinite;">
-🧺✨🫧
-</div>
-<div style="text-align:center; color:white; font-weight:bold; margin-top:5px;">
-Lavatrice in funzione...
+<div style="text-align:center; font-size:30px;">
+  <span style="animation: sali 2s infinite;">🫧</span>
+  <span style="animation: sali 2s infinite 0.3s;">✨</span>
+  <span style="animation: sali 2s infinite 0.6s;">🫧</span>
+  <span style="animation: sali 2s infinite 0.9s;">✨</span>
 </div>
 <style>
-@keyframes float {
-  0% {transform: translateY(0px);}
-  50% {transform: translateY(-10px);}
-  100% {transform: translateY(0px);}
-}
+@keyframes sali { 0% {transform: translateY(20px); opacity:0;} 50% {opacity:1;} 100% {transform: translateY(-20px); opacity:0;} }
 </style>
 """, unsafe_allow_html=True)
 documento = "CATALOGO_ELETTRODOMESTICI_CHATBOT.pdf"
