@@ -64,6 +64,12 @@ st.markdown("""
         background-color: #e67a32 !important;
         transform: translateY(-2px) !important;
     }
+        div[data-testid="stMarkdownContainer"] p {
+        font-size: 15px !important;
+    }
+    div[data-testid="stMarkdownContainer"] h3 {
+        font-size: 19px !important;
+    }
     </style>
 """, unsafe_allow_html=True)
 
