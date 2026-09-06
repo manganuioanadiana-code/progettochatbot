@@ -158,7 +158,7 @@ modello_llm = ChatOpenAI(
         max_tokens=1000,
         openai_api_key=st.secrets["OPENAI_API_KEY"])
     
-    catena = (
+catena = (
         # All'inizio mettiamo un dizionario che serve a costruire 
         # la struttura che il prompt vuol in input
         # Il comparatore produce i documenti (es. k=4) e li passa alla formattazione
