@@ -236,17 +236,17 @@ with col_btn:
     invia = st.button("Invia ➤", use_container_width=True)
 
 # Quando scrive e preme INVIO, o clicca Invia, parte il chatbot
-if domanda_utente:
-        with st.spinner("Sto cercando per te..."):
-            risposta = catena.invoke(domanda_utente)
-            st.write(risposta)
+ if domanda_utente:
+    with st.spinner("Sto cercando per te..."):
+        risposta = catena.invoke(domanda_utente)
+        st.write(risposta)
 
-     if os.path.exists("immagini"):
+    if os.path.exists("immagini"):
         risposta_clean = risposta.lower().replace(" ", "").replace("-", "")
         for file in os.listdir("immagini"):
             nome = file.split(".")[0].lower().replace(" ", "").replace("-", "")
             if len(nome) > 3 and nome in risposta_clean:
                 img_no_bg = togli_sfondo_bianco(f"immagini/{file}")
-                st.image(img_no_bg, width=300)           
+                st.image(img_no_bg, width=300)      
 
            
