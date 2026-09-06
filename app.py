@@ -15,9 +15,8 @@ def togli_sfondo_bianco(percorso):
             new_data.append((255, 255, 255, 0))
         else:
             new_data.append(item)
-     img.putdata(new_data)
-     return img
-
+    img.putdata(new_data)
+    return img
 
 
 
