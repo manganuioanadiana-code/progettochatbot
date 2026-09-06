@@ -95,7 +95,7 @@ st.markdown("""
 col_sx, col_centro, col_dx = st.columns([1, 2.2, 1])
 
 with col_sx:
-       st.markdown("""<div style="background-color:#FFECCF; padding:20px; border-radius:15px;"><h3>Marchi trattati</h3>• Candy<br><br>• Indesit<br><br>• LG<br><br>• Smeg<br><br>• Whirlpool<br><br>• Beko</div>""", unsafe_allow_html=True)
+    st.markdown("""<div style="background-color:#FFECCF; padding:20px; border-radius:15px;"><h3>Marchi trattati</h3>• Candy<br><br>• Indesit<br><br>• LG<br><br>• Smeg<br><br>• Whirlpool<br><br>• Beko</div>""", unsafe_allow_html=True)
     st.markdown('</div>', unsafe_allow_html=True)
 
 with col_centro:
