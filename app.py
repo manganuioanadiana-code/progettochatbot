@@ -4,16 +4,10 @@
 
 import streamlit as st
 import pdfplumber
-from streamlit_lottie import st_lottie
-import requests
 
-def load_lottie(url):
-    r = requests.get(url)
-    if r.status_code != 200:
-        return None
-    return r.json()
 
-lottie_robot = None
+
+
 # Langchain
 from langchain_text_splitters import RecursiveCharacterTextSplitter
 from langchain_openai import OpenAIEmbeddings, ChatOpenAI
@@ -85,7 +79,21 @@ st.markdown("""
 st.header("Elettrodomestici su misura")
 
 st.image("Chatbot.webp", width=400)
-st.image("https://i.giphy.com/media/3o7TKSha51hf8Q1IOk/200.gif", width=250)
+st.markdown("""
+<div style="text-align:center; font-size:90px; animation: float 2s ease-in-out infinite;">
+🧺✨🫧
+</div>
+<div style="text-align:center; color:white; font-weight:bold; margin-top:5px;">
+Lavatrice in funzione...
+</div>
+<style>
+@keyframes float {
+  0% {transform: translateY(0px);}
+  50% {transform: translateY(-10px);}
+  100% {transform: translateY(0px);}
+}
+</style>
+""", unsafe_allow_html=True)
 documento = "CATALOGO_ELETTRODOMESTICI_CHATBOT.pdf"
 
 # Estrazione del contenuto e spezzettamento
