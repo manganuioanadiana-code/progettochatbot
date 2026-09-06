@@ -49,6 +49,7 @@ st.markdown("""
         height: 56px !important;
         box-shadow: 0 4px 12px rgba(0,0,0,0.08) !important;
     }
+    h1, h2, h3 { font-size: 19px !important; }
     div[data-testid="stTextInput"] input:focus {
         background-color: white !important;
         border: 2px solid #FF8C42 !important;
