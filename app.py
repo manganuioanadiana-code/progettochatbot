@@ -234,7 +234,7 @@ with col_btn:
     invia = st.button("Invia ➤", use_container_width=True)
 
 # Quando scrive e preme INVIO, o clicca Invia, parte il chatbot
- if domanda_utente:
+  if domanda_utente:
     with st.spinner("Sto cercando per te..."):
         risposta = catena.invoke(domanda_utente)
         st.write(risposta)
