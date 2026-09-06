@@ -13,7 +13,7 @@ def load_lottie(url):
         return None
     return r.json()
 
-lottie_robot = load_lottie("https://assets2.lottiefiles.com/packages/lf20_0yfsb3a1.json")
+lottie_robot = load_lottieurl("https://assets1.lottiefiles.com/packages/lf20_x62chngn.json")
 # Langchain
 from langchain_text_splitters import RecursiveCharacterTextSplitter
 from langchain_openai import OpenAIEmbeddings, ChatOpenAI
@@ -84,9 +84,9 @@ st.markdown("""
 
 st.header("Elettrodomestici su misura")
 
-st.image("Chatbot.webp", width=250)
+st.image("Chatbot.webp", width=400)
 if lottie_robot:
-    st_lottie(lottie_robot, height=180, key="robot_animato")
+    st_lottie(lottie_robot, height=220, key="robot_animato")
 documento = "CATALOGO_ELETTRODOMESTICI_CHATBOT.pdf"
 
 # Estrazione del contenuto e spezzettamento
