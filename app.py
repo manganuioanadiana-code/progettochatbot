@@ -7,16 +7,7 @@ import pdfplumber
 import os
 from PIL import Image
 def togli_sfondo_bianco(percorso):
-    img = Image.open(percorso).convert("RGBA")
-    datas = img.getdata()
-    new_data = []
-    for item in datas:
-        if item[0] > 240 and item[1] > 240 and item[2] > 240:
-            new_data.append((255, 255, 255, 0))
-        else:
-            new_data.append(item)
-    img.putdata(new_data)
-    return img
+    return Image.open(percorso).convert("RGBA")
 
 
 
@@ -250,12 +241,12 @@ if domanda_utente:
             risposta = catena.invoke(domanda_utente)
             st.write(risposta)
 
-            
+     if os.path.exists("immagini"):
+        risposta_clean = risposta.lower().replace(" ", "").replace("-", "")
+        for file in os.listdir("immagini"):
+            nome = file.split(".")[0].lower().replace(" ", "").replace("-", "")
+            if len(nome) > 3 and nome in risposta_clean:
+                img_no_bg = togli_sfondo_bianco(f"immagini/{file}")
+                st.image(img_no_bg, width=300)           
 
-            if os.path.exists("immagini"):
-                risposta_clean = risposta.lower().replace(" ", "").replace("-", "")
-                for file in os.listdir("immagini"):
-                    nome = file.split('.')[0].lower().replace(" ", "").replace("-", "")
-                    if len(nome) > 3 and nome in risposta_clean:
-                        img_no_bg = togli_sfondo_bianco(f"immagini/{file}")
-                        st.image(img_no_bg, width=300)
+           
