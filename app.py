@@ -13,7 +13,7 @@ def load_lottie(url):
         return None
     return r.json()
 
-lottie_robot = load_lottieurl("https://assets1.lottiefiles.com/packages/lf20_x62chngn.json")
+lottie_robot = load_lottie("https://assets1.lottiefiles.com/packages/lf20_x62chngn.json")
 # Langchain
 from langchain_text_splitters import RecursiveCharacterTextSplitter
 from langchain_openai import OpenAIEmbeddings, ChatOpenAI
