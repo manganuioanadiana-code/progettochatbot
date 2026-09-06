@@ -240,11 +240,22 @@ if domanda_utente:
         risposta = catena.invoke(domanda_utente)
         st.write(risposta)
 
-    if os.path.exists("immagini"):
+      if os.path.exists("immagini"):
         risposta_clean = risposta.lower().replace(" ", "").replace("-", "")
+        trovati = []
         for file in os.listdir("immagini"):
             nome = file.split(".")[0].lower().replace(" ", "").replace("-", "")
-            if len(nome) > 3 and nome in risposta_clean:
-                st.image(f"immagini/{file}", width=300)
+            if len(nome) > 5 and nome in risposta_clean:
+                if file not in trovati:
+                    trovati.append(file)
+
+        if trovati:
+            cols = st.columns(len(trovati[:3]))
+            for i, f in enumerate(trovati[:3]):
+                with cols[i]:
+                    st.image(f"immagini/{f}", caption=f.split(".")[0].upper(), width=250)   
+
+      
+               
 
            
