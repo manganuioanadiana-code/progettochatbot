@@ -4,7 +4,16 @@
 
 import streamlit as st
 import pdfplumber
+from streamlit_lottie import st_lottie
+import requests
 
+def load_lottie(url):
+    r = requests.get(url)
+    if r.status_code != 200:
+        return None
+    return r.json()
+
+lottie_robot = load_lottie("https://assets2.lottiefiles.com/packages/lf20_0yfsb3a1.json")
 # Langchain
 from langchain_text_splitters import RecursiveCharacterTextSplitter
 from langchain_openai import OpenAIEmbeddings, ChatOpenAI
