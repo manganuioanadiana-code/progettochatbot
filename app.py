@@ -80,7 +80,7 @@ st.markdown("""
 
 st.header("Elettrodomestici su misura")
 
-st.image("Chatbot.webp", width=500)
+st.image("Chatbot.webp", width=550)
 st.markdown("""
 <div style="text-align:center; font-size:30px;">
   <span style="animation: sali 2s infinite;">🫧</span>
