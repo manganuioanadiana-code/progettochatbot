@@ -6,8 +6,6 @@ import streamlit as st
 import pdfplumber
 import os
 from PIL import Image
-def togli_sfondo_bianco(percorso):
-    return Image.open(percorso).convert("RGBA")
 
 
 
@@ -229,7 +227,7 @@ with col_input:
         "Chiedi al chatbot:", 
         placeholder="Es. cerco lavatrice 10kg sotto i 400€...",
         label_visibility="visible"
-    )
+     )
 
 with col_btn:
     st.markdown("<div style='height: 28px'></div>", unsafe_allow_html=True)
@@ -246,7 +244,6 @@ with col_btn:
         for file in os.listdir("immagini"):
             nome = file.split(".")[0].lower().replace(" ", "").replace("-", "")
             if len(nome) > 3 and nome in risposta_clean:
-                img_no_bg = togli_sfondo_bianco(f"immagini/{file}")
-                st.image(img_no_bg, width=300)      
+                st.image(f"immagini/{file}", width=300)
 
            
