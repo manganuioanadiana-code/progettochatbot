@@ -130,7 +130,7 @@ if documento is not None:
     # Qui è come nei roles di ChatGPT, ma qui siamo in Langchain
     # e la struttura è più semplice: "system" e "human"
     # Attenzione che nelle stringhe ''' vengono conservati spazi e indentazioni!
- prompt = ChatPromptTemplate.from_messages([
+prompt = ChatPromptTemplate.from_messages([
     ("system",
      '''Sei un consulente esperto e cordiale del negozio "Elettrodomestici su misura".
 TONO: professionale, gentile, breve.
@@ -146,13 +146,13 @@ Contesto dal tuo catalogo:
     ("human", "{question}")
 ])
 
-    comparatore = vettori.as_retriever(
+  comparatore = vettori.as_retriever(
         # mmr = maximal marginal relevance
         search_type="mmr",
         # Ritorna i 4 frammenti più simili
         search_kwargs={"k": 4})
     
-    modello_llm = ChatOpenAI(
+  modello_llm = ChatOpenAI(
         model="gpt-5.4-nano",
         temperature=0.3,
         max_tokens=1000,
