@@ -93,7 +93,7 @@ st.markdown("""
 </style>
 """, unsafe_allow_html=True)
 col_sx, col_sp1, col_centro, col_sp2, col_dx = st.columns([1.1, 0.2, 2.6, 0.2, 1.1])
-st.markdown("<style>div[data-testid='column']{margin-top:-280px;}</style>", unsafe_allow_html=True)
+
 
 with col_sx:
     st.markdown("""<div style="background-color:#FFECCF; padding:20px; border-radius:15px;"><h3>Marchi trattati</h3>• Candy<br><br>• Indesit<br><br>• LG<br><br>• Smeg<br><br>• Whirlpool<br><br>• Beko</div>""", unsafe_allow_html=True)
