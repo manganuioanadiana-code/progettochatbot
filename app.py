@@ -19,25 +19,50 @@ st.set_page_config(page_title= "RagChatbot",
                    page_icon=":material/local_laundry_service:")
 
 # Personalizzazione colori:
-# Colori esadecimali: https://divmagic.com/it/tools/color-converter
+# Personalizzazione colori:
 st.markdown("""
     <style>
     .stApp {
         background: #F99E1C;
     }
-    .stApp::before {
+    .stApp:before {
         content: "";
         position: fixed;
-        top: 0; left: 0;
-        width: 100%; height: 100%;
-        background: rgba(255,255,255,0.12);
-        backdrop-filter: blur(45px);
-        pointer-events: none;
-        z-index: -1;
     }
-    .stChatMessage {
-        background: rgba(255,255,255,0.88) !important;
-        border-radius: 18px !important;
+            
+    /* --- BARRA DOMANDA + BOTTONE VERSIONE 3 --- */
+    div[data-testid="stTextInput"] > label {
+        font-size: 18px !important;
+        font-weight: 700 !important;
+        color: #3d2314 !important;
+    }
+    div[data-testid="stTextInput"] input {
+        background-color: #eef6ff !important;
+        border-radius: 14px !important;
+        border: 2px solid transparent !important;
+        padding: 18px 22px !important;
+        font-size: 16px !important;
+        height: 56px !important;
+        box-shadow: 0 4px 12px rgba(0,0,0,0.08) !important;
+    }
+    div[data-testid="stTextInput"] input:focus {
+        background-color: white !important;
+        border: 2px solid #FF8C42 !important;
+        box-shadow: 0 0 0 5px rgba(255,140,66,0.25) !important;
+        outline: none !important;
+    }
+    div[data-testid="stColumn"] button {
+        background-color: #FF8C42 !important;
+        color: white !important;
+        border-radius: 14px !important;
+        border: none !important;
+        height: 56px !important;
+        font-weight: 700 !important;
+        box-shadow: 0 4px 12px rgba(255,140,66,0.4) !important;
+    }
+    div[data-testid="stColumn"] button:hover {
+        background-color: #e67a32 !important;
+        transform: translateY(-2px) !important;
     }
     </style>
 """, unsafe_allow_html=True)
@@ -179,6 +204,22 @@ catena = (
         # StrOutputParser() prende l’output del modello 
         # e lo traforma in una stringa semplice (senza aggiunta di info ecc.)
     
+# --- INPUT + BOTTONE TONDO VERSIONE 3 ---
+col_input, col_btn = st.columns([4.5, 1])
+
+with col_input:
+    domanda_utente = st.text_input(
+        "Chiedi al chatbot:", 
+        placeholder="Es. cerco lavatrice 10kg sotto i 400€...",
+        label_visibility="visible"
+    )
+
+with col_btn:
+    st.markdown("<div style='height: 28px'></div>", unsafe_allow_html=True)
+    invia = st.button("Invia ➤", use_container_width=True)
+
+# Quando scrive e preme INVIO, o clicca Invia, parte il chatbot
 if domanda_utente:
+    with st.spinner("Sto cercando per te..."):
         risposta = catena.invoke(domanda_utente)
         st.write(risposta)
