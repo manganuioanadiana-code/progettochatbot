@@ -277,7 +277,7 @@ if os.path.exists("immagini"):
         st.write(f"DEBUG: proposti nella risposta -> cerco tra {lista_file}")
         st.write(f"DEBUG: trovati -> {trovati}")
 
-  if trovati:
+if trovati:
             for r in range(0, len(trovati), 3):
                 chunk = trovati[r:r+3]
                 cols = st.columns(len(chunk))
