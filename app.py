@@ -167,9 +167,32 @@ if documento is not None:
     # Generazione della risposta in una chain di eventi
     # domanda -> embedding -> similarity search -> risultati all'LLM -> risposta
 
+ 
     def formatta_documento(documenti):
-        return "\n\n".join([documento.page_content for documento in documenti])
-    
+    # recupera la domanda dell'utente
+    domanda = st.session_state.get("domanda_inviata", "") or st.session_state.get("domanda_utente", "") or ""
+    domanda_lower = str(domanda).lower()
+
+    # capisce cosa vuole l'utente
+    if "lavatrice" in domanda_lower and "lavastov" not in domanda_lower:
+        keyword = "lavatrice"
+    elif "lavastov" in domanda_lower:
+        keyword = "lavastoviglie"
+    elif "asciugat" in domanda_lower:
+        keyword = "asciugatrice"
+    elif "frigo" in domanda_lower or "frigorif" in domanda_lower:
+        keyword = "frigorifero"
+    else:
+        keyword = None
+
+    # FILTRO: tiene solo i frammenti della categoria giusta
+    if keyword:
+        filtrati = [d for d in documenti if keyword in d.page_content.lower()]
+        # se trova qualcosa di filtrato, usa solo quello
+        if len(filtrati) > 0:
+            documenti = filtrati
+
+    return "\n\n".join([documento.page_content for documento in documenti])
     # Quando userò il prompt, qui dentro dovrà essere inserito qualcosa chiamato "context"
     # e qualcosa chiamata "question"
     # Qui è come nei roles di ChatGPT, ma qui siamo in Langchain
