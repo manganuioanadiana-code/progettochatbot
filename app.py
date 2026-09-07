@@ -77,7 +77,7 @@ st.markdown("""
     }
     </style>
 """, unsafe_allow_html=True)
-col_sx, col_center, col_dx = st.columns([1.2, 2, 1.2], gap="large")
+col_sx, col_center, col_dx = st.columns([1, 3.5, 1], gap="large")
 
 with col_sx:
     st.markdown("""
@@ -95,7 +95,7 @@ with col_sx:
 
 with col_center:
     st.header("Elettrodomestici su misura")
-    st.image("Chatbot.webp", width=550)
+    st.image("Chatbot.webp", use_container_width=True)
     st.markdown("""
     <div style="text-align:center; font-size:30px;">
     <span style="animation: sali 2s infinite;">✨</span>
