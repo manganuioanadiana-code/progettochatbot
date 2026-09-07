@@ -193,7 +193,7 @@ def formatta_documento(documenti):
 prompt = ChatPromptTemplate.from_messages([
     ("system",
      '''Sei un consulente esperto e cordiale del negozio "Elettrodomestici su misura".
-TONO: professionale, gentile, esaustivo e dettagliato.
+TONO: professionale, gentile, ESAUSTIVO e dettagliato.
 
 REGOLE FONDAMENTALI:
 - Non dire MAI "in base al contesto" o "nel documento". Tu SEI il negozio.
@@ -261,20 +261,20 @@ if domanda_utente:
         st.write(risposta)
 
 if os.path.exists("immagini"):
-    risposta_clean = risposta.lower().replace(" ", "").replace("-", "").replace("_", "")
-    trovati = []
-    for file in os.listdir("immagini"):
-        nome = file.split(".")[0].lower().replace(" ", "").replace("-", "").replace("_", "")
-        if len(nome) > 5 and nome in risposta_clean:
-            if file not in trovati:
-                trovati.append(file)
+        risposta_clean = risposta.lower().replace(" ", "").replace("-", "").replace("_", "")
+        trovati = []
+        for file in os.listdir("immagini"):
+            nome = file.split(".")[0].lower().replace(" ", "").replace("-", "").replace("_", "")
+            if len(nome) > 4 and nome in risposta_clean:
+                if file not in trovati:
+                    trovati.append(file)
 
 if trovati:
-        cols = st.columns(len(trovati[:3]))
-        for i, f in enumerate(trovati[:3]):
-            with cols[i]:
-                st.image(f"immagini/{f}", caption=f.split(".")[0].upper(), use_container_width=True)   
-
+            st.write(f"Ho trovato {len(trovati)} modelli:") # per debug, poi lo togli
+            cols = st.columns(min(3, len(trovati)))
+            for i, f in enumerate(trovati[:3]):
+                with cols[i]:
+                    st.image(f"immagini/{f}", caption=f.split(".")[0], width=250)
       
                
 
