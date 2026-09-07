@@ -107,7 +107,6 @@ with col_center:
     @keyframes sali { 0% {transform: translateY(20px); opacity:0;} 50% {opacity:1;} 100% {transform: translateY(-20px); opacity:0;} }
     </style>
     """, unsafe_allow_html=True)
-  col_sx, col_center, col_dx = st.columns([1.2, 2, 1.2], gap="large") 
 
 with col_dx:
     st.markdown("""
