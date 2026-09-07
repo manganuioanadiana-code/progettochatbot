@@ -167,8 +167,7 @@ if documento is not None:
     # Generazione della risposta in una chain di eventi
     # domanda -> embedding -> similarity search -> risultati all'LLM -> risposta
 
- 
-     def formatta_documento(documenti):
+ def formatta_documento(documenti):
     # recupera la domanda dell'utente
     domanda = st.session_state.get("domanda_inviata", "") or st.session_state.get("domanda_utente", "") or ""
     domanda_lower = str(domanda).lower()
