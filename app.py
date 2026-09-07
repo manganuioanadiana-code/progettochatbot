@@ -77,52 +77,7 @@ st.markdown("""
     }
     </style>
 """, unsafe_allow_html=True)
-col_sx, col_center, col_dx = st.columns([1, 3.5, 1], gap="large")
 
-with col_sx:
-    st.markdown("""
-    <div style="background:white; padding:18px; border-radius:20px;">
-    <h4>📍 Montedoro (CL)</h4>
-    Piazza Umberto I<br><br>
-    <b>🕒</b> Lun-Sab 08:30-13:00 / 16:00-20:30<br><br>
-    <b>📞</b> 0934 934219<br>
-    <b>WhatsApp</b> 327 7841721<br><br>
-    ✅ Consegna a domicilio<br>
-    ✅ Ritiro usato<br>
-    ✅ Pagamento a rate
-    </div>
-    """, unsafe_allow_html=True)
-
-with col_center:
-    st.header("Elettrodomestici su misura")
-    st.image("Chatbot.webp", use_container_width=True)
-    st.markdown("""
-    <div style="text-align:center; font-size:30px;">
-    <span style="animation: sali 2s infinite;">✨</span>
-    <span style="animation: sali 2s infinite 0.3s;">✨</span>
-    <span style="animation: sali 2s infinite 0.6s;">✨</span>
-    <span style="animation: sali 2s infinite 0.9s;">✨</span>
-    </div>
-    <style>
-    @keyframes sali { 0% {transform: translateY(20px); opacity:0;} 50% {opacity:1;} 100% {transform: translateY(-20px); opacity:0;} }
-    </style>
-    """, unsafe_allow_html=True)
-
-with col_dx:
-    st.markdown("""
-    <div style="background:white; padding:18px; border-radius:20px;">
-    <h4>🔥 In evidenza</h4>
-    <b>CANDY CF3E7E0W</b><br>
-    10 coperti<br>
-    <span style="color:green; font-weight:bold">Richiedi prezzo</span><br><br>
-    <b>INDESIT IN2FE13</b><br>
-    13 coperti<br>
-    <span style="color:green; font-weight:bold">Disponibile</span><br><br>
-    <a href="https://wa.me/393277841721" target="_blank" style="text-decoration:none">
-    <div style="background:#25D366; color:white; text-align:center; padding:10px; border-radius:12px; font-weight:bold">💬 WhatsApp</div>
-    </a>
-    </div>
-    """, unsafe_allow_html=True)
 
 col_centro = st.container()
 
