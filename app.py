@@ -82,19 +82,18 @@ col_chat, col_info = st.columns([2.2, 1], gap="large")
 
 with col_chat:
     st.header("Elettrodomestici su misura")
-
-st.image("Chatbot.webp", width=600)
-st.markdown("""
-<div style="text-align:center; font-size:30px;">
-  <span style="animation: sali 2s infinite;">🫧</span>
-  <span style="animation: sali 2s infinite 0.3s;">✨</span>
-  <span style="animation: sali 2s infinite 0.6s;">🫧</span>
-  <span style="animation: sali 2s infinite 0.9s;">✨</span>
-</div>
-<style>
-@keyframes sali { 0% {transform: translateY(20px); opacity:0;} 50% {opacity:1;} 100% {transform: translateY(-20px); opacity:0;} }
-</style>
-""", unsafe_allow_html=True)
+    st.image("Chatbot.webp", width=600)
+    st.markdown("""
+    <div style="text-align:center; font-size:30px;">
+    <span style="animation: sali 2s infinite;">🫧</span>
+    <span style="animation: sali 2s infinite 0.3s;">✨</span>
+    <span style="animation: sali 2s infinite 0.6s;">🫧</span>
+    <span style="animation: sali 2s infinite 0.9s;">✨</span>
+    </div>
+    <style>
+    @keyframes sali { 0% {transform: translateY(20px); opacity:0;} 50% {opacity:1;} 100% {transform: translateY(-20px); opacity:0;} }
+    </style>
+    """, unsafe_allow_html=True)
 col_centro = st.container()
 
 
