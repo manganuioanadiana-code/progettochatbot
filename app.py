@@ -269,7 +269,7 @@ if os.path.exists("immagini"):
             if file not in trovati:
                 trovati.append(file)
 
- if trovati:
+if trovati:
         cols = st.columns(len(trovati[:3]))
         for i, f in enumerate(trovati[:3]):
             with cols[i]:
