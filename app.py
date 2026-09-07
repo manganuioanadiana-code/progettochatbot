@@ -78,7 +78,20 @@ st.markdown("""
     </style>
 """, unsafe_allow_html=True)
 
+st.header("Elettrodomestici su misura")
 
+st.image("Chatbot.webp", width=550)
+st.markdown("""
+<div style="text-align:center; font-size:30px;">
+  <span style="animation: sali 2s infinite;">🫧</span>
+  <span style="animation: sali 2s infinite 0.3s;">✨</span>
+  <span style="animation: sali 2s infinite 0.6s;">🫧</span>
+  <span style="animation: sali 2s infinite 0.9s;">✨</span>
+</div>
+<style>
+@keyframes sali { 0% {transform: translateY(20px); opacity:0;} 50% {opacity:1;} 100% {transform: translateY(-20px); opacity:0;} }
+</style>
+""", unsafe_allow_html=True)
 col_centro = st.container()
 
 
@@ -245,8 +258,6 @@ if domanda_utente:
             for i, f in enumerate(trovati[:3]):
                 with cols[i]:
                     st.image(f"immagini/{f}", caption=f.split(".")[0].upper(), width=250)   
-
-
 
       
                
