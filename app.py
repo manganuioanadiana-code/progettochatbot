@@ -255,9 +255,15 @@ with col_btn:
     invia = st.button("Invia ➤", use_container_width=True)
 
 # Quando scrive e preme INVIO, o clicca Invia, parte il chatbot
+if "cronologia" not in st.session_state:
+    st.session_state.cronologia = []
+
 if domanda_utente:
     with st.spinner("Sto cercando per te..."):
-        risposta = catena.invoke(domanda_utente)
+        # aggiungo la cronologia alla domanda
+        domanda_con_memoria = f"Cronologia: {st.session_state.cronologia}\n\nNuova domanda: {domanda_utente}"
+        risposta = catena.invoke(domanda_con_memoria)
+        st.session_state.cronologia.append(f"Utente: {domanda_utente} | Assistente: {risposta}")
         st.write(risposta)
 
 if domanda_utente and 'risposta' in locals() and os.path.exists("immagini"):
