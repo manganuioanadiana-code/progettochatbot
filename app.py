@@ -260,7 +260,7 @@ if domanda_utente:
         risposta = catena.invoke(domanda_utente)
         st.write(risposta)
 
-if os.path.exists("immagini"):
+if domanda_utente and 'risposta' in locals() and os.path.exists("immagini"):
         risposta_clean = risposta.lower()
         trovati = []
         lista_file = os.listdir("immagini")
@@ -273,7 +273,7 @@ if os.path.exists("immagini"):
                     trovati.append(file)
                     break
 
-if trovati:
+if 'trovati' in locals() and trovati:
             for r in range(0, len(trovati), 3):
                 chunk = trovati[r:r+3]
                 cols = st.columns(len(chunk))
