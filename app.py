@@ -77,8 +77,11 @@ st.markdown("""
     }
     </style>
 """, unsafe_allow_html=True)
+# --- LAYOUT 2 COLONNE ---
+col_chat, col_info = st.columns([2.2, 1], gap="large")
 
-st.header("Elettrodomestici su misura")
+with col_chat:
+    st.header("Elettrodomestici su misura")
 
 st.image("Chatbot.webp", width=600)
 st.markdown("""
@@ -286,5 +289,19 @@ if 'trovati' in locals() and trovati:
                 for i, f in enumerate(chunk):
                     with cols[i]:
                         st.image(f"immagini/{f}", caption=f.split(".")[0], width=200)
-
+                      
+with col_info:
+        with st.container(border=True):
+            st.markdown("### 📍 Vieni a trovarci")
+            st.write("**Piazza Umberto I**")
+            st.write("93010 Montedoro (CL)")
+            st.divider()
+            st.markdown("### 📞 Contatti")
+            st.write("Fisso: 0934 934219")
+            st.write("WhatsApp: 327 7841721")
+            st.link_button("💬 WhatsApp", "https://wa.me/393277841721")
+            st.divider()
+            st.markdown("### ⏰ Orari")
+            st.write("Lun-Sab")
+            st.write("08:30-13:00 / 16:00-20:30")
            
