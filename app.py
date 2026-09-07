@@ -266,16 +266,12 @@ if os.path.exists("immagini"):
         lista_file = os.listdir("immagini")
 
         for file in lista_file:
-            nome_file = file.lower().split(".")[0] # es: samsung-rb38
-            # prende le parole lunghe del nome file
+            nome_file = file.lower().split(".")[0]
             pezzi = nome_file.replace("-", " ").replace("_", " ").split()
             for p in pezzi:
                 if len(p) > 3 and p in risposta_clean and file not in trovati:
                     trovati.append(file)
                     break
-
-        st.write(f"DEBUG: proposti nella risposta -> cerco tra {lista_file}")
-        st.write(f"DEBUG: trovati -> {trovati}")
 
 if trovati:
             for r in range(0, len(trovati), 3):
@@ -284,6 +280,5 @@ if trovati:
                 for i, f in enumerate(chunk):
                     with cols[i]:
                         st.image(f"immagini/{f}", caption=f.split(".")[0], width=200)
-               
 
            
