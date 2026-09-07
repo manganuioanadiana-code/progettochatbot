@@ -261,21 +261,29 @@ if domanda_utente:
         st.write(risposta)
 
 if os.path.exists("immagini"):
-        risposta_clean = risposta.lower().replace(" ", "").replace("-", "").replace("_", "")
+        risposta_clean = risposta.lower()
         trovati = []
-        for file in os.listdir("immagini"):
-            nome = file.split(".")[0].lower().replace(" ", "").replace("-", "").replace("_", "")
-            if len(nome) > 4 and nome in risposta_clean:
-                if file not in trovati:
-                    trovati.append(file)
+        lista_file = os.listdir("immagini")
 
-if trovati:
-            st.write(f"Ho trovato {len(trovati)} modelli:") # per debug, poi lo togli
-            cols = st.columns(min(3, len(trovati)))
-            for i, f in enumerate(trovati[:3]):
-                with cols[i]:
-                    st.image(f"immagini/{f}", caption=f.split(".")[0], width=250)
-      
+        for file in lista_file:
+            nome_file = file.lower().split(".")[0] # es: samsung-rb38
+            # prende le parole lunghe del nome file
+            pezzi = nome_file.replace("-", " ").replace("_", " ").split()
+            for p in pezzi:
+                if len(p) > 3 and p in risposta_clean and file not in trovati:
+                    trovati.append(file)
+                    break
+
+        st.write(f"DEBUG: proposti nella risposta -> cerco tra {lista_file}")
+        st.write(f"DEBUG: trovati -> {trovati}")
+
+  if trovati:
+            for r in range(0, len(trovati), 3):
+                chunk = trovati[r:r+3]
+                cols = st.columns(len(chunk))
+                for i, f in enumerate(chunk):
+                    with cols[i]:
+                        st.image(f"immagini/{f}", caption=f.split(".")[0], width=200)
                
 
            
