@@ -12,7 +12,7 @@ Lavoro in un negozio di elettrodomestici e ogni giorno i clienti sono confusi da
 👉 https://assistenzacatalogoelettrodomestici.streamlit.app
 
 ### Funzionalità
-- Chat interattiva con esempi guidati (es. "cerco lavatrice 10kg sotto i 400€")
+- Chat interattiva con esempi guidati (es. "cerco lavatrice 7g sotto i 400€")
 - Consigli personalizzati basati su 20 prodotti reali
 - Interfaccia divisa in Chat + Info negozio (contatti, orari, supporto)
 - Memoria conversazione con session_state
@@ -20,8 +20,7 @@ Lavoro in un negozio di elettrodomestici e ogni giorno i clienti sono confusi da
 ### Tecnologie usate
 - **Python**
 - **Streamlit**
-- **OpenAI API** 
-- **Pillow** 
+- **OpenAI API**
 - **GitHub** 
 
 ### Struttura repository
