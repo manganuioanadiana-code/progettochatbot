@@ -20,7 +20,7 @@ Lavoro in un negozio di elettrodomestici e ogni giorno i clienti sono confusi da
 ### Tecnologie usate
 - **Python**
 - **Streamlit**
-- **OpenAI API / Groq (Llama 3)** 
+- **OpenAI API** 
 - **Pillow** 
 - **GitHub** 
 
