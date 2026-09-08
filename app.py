@@ -248,7 +248,7 @@ col_input, col_btn = st.columns([4.5, 1])
 with col_input:
     domanda_utente = st.text_input(
         "Chiedi al chatbot:", 
-        placeholder="Es. cerco lavatrice 10kg sotto i 400€...",
+        placeholder="Es. cerco lavatrice 7kg sotto i 400€...",
         label_visibility="visible"
      )
 
